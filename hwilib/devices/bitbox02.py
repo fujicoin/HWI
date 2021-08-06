@@ -89,11 +89,11 @@ class BitBox02Error(UnavailableActionError):
         msg = "Input error: {}. A keypath might be invalid. Supported keypaths are: ".format(
             msg
         )
-        msg += "m/49'/0'/<account'> for p2wpkh-p2sh; "
-        msg += "m/84'/0'/<account'> for p2wpkh; "
-        msg += "m/48'/0'/<account'>/2' for p2wsh multisig; "
-        msg += "m/48'/0'/<account'>/1' for p2wsh-p2sh multisig; "
-        msg += "m/48'/0'/<account'>' for any supported multisig; "
+        msg += "m/49'/75'/<account'> for p2wpkh-p2sh; "
+        msg += "m/84'/75'/<account'> for p2wpkh; "
+        msg += "m/48'/75'/<account'>/2' for p2wsh multisig; "
+        msg += "m/48'/75'/<account'>/1' for p2wsh-p2sh multisig; "
+        msg += "m/48'/75'/<account'>' for any supported multisig; "
         msg += "account can be between 0' and 99'; "
         msg += "For address keypaths, append /0/<address index> for a receive and /1/<change index> for a change address."
         super().__init__(msg)
@@ -362,11 +362,11 @@ class Bitbox02Client(HardwareWalletClient):
 
         The only accepted keypaths for xpubs are (as of firmware v9.4.0):
 
-        - `m/49'/0'/<account'>` for `p2wpkh-p2sh` (segwit wrapped in P2SH)
-        - `m/84'/0'/<account'>` for `p2wpkh` (native segwit v0)
-        - `m/48'/0'/<account'>/2'` for p2wsh multisig (native segwit v0 multisig).
-        - `m/48'/0'/<account'>/1'` for p2wsh-p2sh multisig (p2sh-wrapped segwit v0 multisig).
-        - `m/48'/0'/<account'>` for p2wsh and p2wsh-p2sh multisig.
+        - `m/49'/75'/<account'>` for `p2wpkh-p2sh` (segwit wrapped in P2SH)
+        - `m/84'/75'/<account'>` for `p2wpkh` (native segwit v0)
+        - `m/48'/75'/<account'>/2'` for p2wsh multisig (native segwit v0 multisig).
+        - `m/48'/75'/<account'>/1'` for p2wsh-p2sh multisig (p2sh-wrapped segwit v0 multisig).
+        - `m/48'/75'/<account'>` for p2wsh and p2wsh-p2sh multisig.
 
         `account'` can be between `0'` and `99'`.
 

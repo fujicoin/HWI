@@ -127,12 +127,12 @@ class CCProtocolPacker:
 
     @staticmethod
     def get_xpub(subpath='m'):
-        # takes a string, like: m/44'/0'/23/23
+        # takes a string, like: m/44'/75'/23/23
         return b'xpub' + subpath.encode('ascii')
 
     @staticmethod
     def show_address(subpath, addr_fmt=AF_CLASSIC):
-        # - takes a string, like: m/44'/0'/23/23
+        # - takes a string, like: m/44'/75'/23/23
         # - shows on screen, no feedback from user expected
         assert not (addr_fmt & AFC_SCRIPT)
         return pack('<4sI', b'show', addr_fmt) + subpath.encode('ascii')

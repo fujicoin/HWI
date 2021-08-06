@@ -171,7 +171,7 @@ def getmasterxpub(client: HardwareWalletClient, addrtype: AddressType = AddressT
     Get the master extended public key from a client
 
     :param client: The client to interact with
-    :return: A dictionary containing the public key at the ``m/44'/0'/0'`` derivation path.
+    :return: A dictionary containing the public key at the ``m/44'/75'/0'`` derivation path.
         Returned as ``{"xpub": <xpub string>}``.
     """
     return {"xpub": client.get_master_xpub(addrtype, account).to_string()}
