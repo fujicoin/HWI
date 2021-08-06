@@ -22,15 +22,15 @@ wine 'wineboot'
 
 # Install Python
 # Get the PGP keys
-wget -N -c "https://www.python.org/static/files/pubkeys.txt"
-gpg --import pubkeys.txt
-rm pubkeys.txt
+#wget -N -c "https://www.python.org/static/files/pubkeys.txt"
+#gpg --import pubkeys.txt
+#rm pubkeys.txt
 
 # Install python components
 for msifile in core dev exe lib pip tools; do
     wget -N -c "https://www.python.org/ftp/python/$PYTHON_VERSION/amd64/${msifile}.msi"
     wget -N -c "https://www.python.org/ftp/python/$PYTHON_VERSION/amd64/${msifile}.msi.asc"
-    gpg --verify "${msifile}.msi.asc" "${msifile}.msi"
+    #gpg --verify "${msifile}.msi.asc" "${msifile}.msi"
     wine msiexec /i "${msifile}.msi" /qb TARGETDIR=$PYHOME
     rm $msifile.msi*
 done
