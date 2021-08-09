@@ -177,7 +177,7 @@ def get_parser() -> HWIArgumentParser:
     getkeypool_parser.add_argument('--internal', action='store_true', help='Indicates that the keys are change keys')
     kp_type_group = getkeypool_parser.add_mutually_exclusive_group()
     kp_type_group.add_argument("--addr-type", help="The address type (and default derivation path) to produce descriptors for", type=AddressType.argparse, choices=list(AddressType), default=AddressType.WIT) # type: ignore
-    kp_type_group.add_argument('--all', action='store_true', help='Generate addresses for all standard address types (default paths: ``m/{44,49,84}h/0h/0h/[0,1]/*)``')
+    kp_type_group.add_argument('--all', action='store_true', help='Generate addresses for all standard address types (default paths: ``m/{44,49,84}h/75h/0h/[0,1]/*)``')
     getkeypool_parser.add_argument('--account', help='BIP43 account', type=int, default=0)
     getkeypool_parser.add_argument('--path', help='Derivation path, default follows BIP43 convention, e.g. ``m/84h/75h/0h/1/*`` with --addr-type wpkh --internal. If this argument and --internal is not given, both internal and external keypools will be returned.')
     getkeypool_parser.add_argument('start', type=int, help='The index to start at.')
