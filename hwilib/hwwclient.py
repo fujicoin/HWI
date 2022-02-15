@@ -37,7 +37,7 @@ class HardwareWalletClient(object):
         """
         self.path = path
         self.password = password
-        self.message_magic = b"\x18Bitcoin Signed Message:\n"
+        self.message_magic = b"\x19FujiCoin Signed Message:\n"
         self.chain = chain
         self.fingerprint: Optional[str] = None
         # {bip32_path: <xpub string>}
