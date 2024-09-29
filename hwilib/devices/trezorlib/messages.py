@@ -431,7 +431,7 @@ class GetPublicKey(protobuf.MessageType):
         address_n: Optional[List["int"]] = None,
         ecdsa_curve_name: Optional["str"] = None,
         show_display: Optional["bool"] = None,
-        coin_name: Optional["str"] = 'Bitcoin',
+        coin_name: Optional["str"] = 'Fujicoin',
         script_type: Optional["InputScriptType"] = InputScriptType.SPENDADDRESS,
         ignore_xpub_magic: Optional["bool"] = None,
     ) -> None:
@@ -478,7 +478,7 @@ class GetAddress(protobuf.MessageType):
         self,
         *,
         address_n: Optional[List["int"]] = None,
-        coin_name: Optional["str"] = 'Bitcoin',
+        coin_name: Optional["str"] = 'Fujicoin',
         show_display: Optional["bool"] = None,
         multisig: Optional["MultisigRedeemScriptType"] = None,
         script_type: Optional["InputScriptType"] = InputScriptType.SPENDADDRESS,
@@ -519,7 +519,7 @@ class GetOwnershipId(protobuf.MessageType):
         self,
         *,
         address_n: Optional[List["int"]] = None,
-        coin_name: Optional["str"] = 'Bitcoin',
+        coin_name: Optional["str"] = 'Fujicoin',
         multisig: Optional["MultisigRedeemScriptType"] = None,
         script_type: Optional["InputScriptType"] = InputScriptType.SPENDADDRESS,
     ) -> None:
@@ -558,7 +558,7 @@ class SignMessage(protobuf.MessageType):
         *,
         message: "bytes",
         address_n: Optional[List["int"]] = None,
-        coin_name: Optional["str"] = 'Bitcoin',
+        coin_name: Optional["str"] = 'Fujicoin',
         script_type: Optional["InputScriptType"] = InputScriptType.SPENDADDRESS,
         no_script_type: Optional["bool"] = None,
     ) -> None:
@@ -601,7 +601,7 @@ class VerifyMessage(protobuf.MessageType):
         address: "str",
         signature: "bytes",
         message: "bytes",
-        coin_name: Optional["str"] = 'Bitcoin',
+        coin_name: Optional["str"] = 'Fujicoin',
     ) -> None:
         self.address = address
         self.signature = signature
@@ -632,7 +632,7 @@ class SignTx(protobuf.MessageType):
         *,
         outputs_count: "int",
         inputs_count: "int",
-        coin_name: Optional["str"] = 'Bitcoin',
+        coin_name: Optional["str"] = 'Fujicoin',
         version: Optional["int"] = 1,
         lock_time: Optional["int"] = 0,
         expiry: Optional["int"] = None,
@@ -972,7 +972,7 @@ class GetOwnershipProof(protobuf.MessageType):
         *,
         address_n: Optional[List["int"]] = None,
         ownership_ids: Optional[List["bytes"]] = None,
-        coin_name: Optional["str"] = 'Bitcoin',
+        coin_name: Optional["str"] = 'Fujicoin',
         script_type: Optional["InputScriptType"] = InputScriptType.SPENDWITNESS,
         multisig: Optional["MultisigRedeemScriptType"] = None,
         user_confirmation: Optional["bool"] = False,
@@ -1023,7 +1023,7 @@ class AuthorizeCoinJoin(protobuf.MessageType):
         max_total_fee: "int",
         address_n: Optional[List["int"]] = None,
         fee_per_anonymity: Optional["int"] = 0,
-        coin_name: Optional["str"] = 'Bitcoin',
+        coin_name: Optional["str"] = 'Fujicoin',
         script_type: Optional["InputScriptType"] = InputScriptType.SPENDADDRESS,
         amount_unit: Optional["AmountUnit"] = AmountUnit.BITCOIN,
     ) -> None:
